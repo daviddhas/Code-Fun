@@ -1,5 +1,5 @@
 def permutate(s,step=0):
-	
+	print step
 	if step == len(s):
 		print "".join(s)
 
