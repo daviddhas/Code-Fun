@@ -1,14 +1,14 @@
-def to_string(l):
-	return ''.join(l)
+def permutate(s,step=0):
+	
+	if step == len(s):
+		print "".join(s)
 
-def permute(s,l,r):
-	if l ==r:
-		to_string(s)
-	for i in range(l,r+1):
-		s[i],s[r]=s[r],s[i]
+	copy = [x for x in s]
+	
+	for i in range (step,len(s)):
+	
+		copy[step],copy[i]= copy[i],copy[step]
+	
+		permutate(copy,step+1)
 
-s = "ABC"
-l = [1,2,3]
-print s
-print to_string(s)
-#print permute(s)
+permutate("abc")
